@@ -5,3 +5,9 @@ https://random-status-code.herokuapp.com
 https://www.alura.com.br    
 https://www.caelum.com.br
 https://www.casadocodigo.com.br
+https://www.google.com/
+https://www.facebook.com/
+https://www.youtube.com/
+https://www.mercadolivre.com.br/
+https://www.wikipedia.org/
+https://www.instagram.com/
