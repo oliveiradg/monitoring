@@ -12,14 +12,13 @@ import (
 	"time"
 )
 
-const loopDeMonitoramento = 5
+const loopDeMonitoramento = 3
 const delay = 5
 
 func main() {
 	exibeIntrodução()
 	for {
 		exibeMenu()
-
 		comando := leComando()
 
 		switch comando {
@@ -56,6 +55,7 @@ func exibeMenu() {
 	fmt.Println("1- Iniciar Monitoramento")
 	fmt.Println("2 - Exibir Logs")
 	fmt.Println("0 - Sair do programa")
+	fmt.Println("")
 
 }
 
