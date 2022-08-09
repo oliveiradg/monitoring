@@ -1,0 +1,7 @@
+09/08/2022 09:31:56 - https://modalgr.com.br - online: true
+09/08/2022 09:31:56 - https://www.uol.com.br - online: true
+09/08/2022 09:31:56 - https://globoplay.globo.com - online: true
+09/08/2022 09:32:02 - https://random-status-code.herokuapp.com - online: false
+09/08/2022 09:32:02 - https://www.alura.com.br - online: true
+09/08/2022 09:32:03 - https://www.caelum.com.br - online: true
+09/08/2022 09:32:03 - https://www.casadocodigo.com.br - online: true

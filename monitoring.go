@@ -69,8 +69,6 @@ func leComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando....")
-	// sites := []string{"https://modalgr.com.br", "https://www.uol.com.br/",
-	// 	"https://globoplay.globo.com/", "https://random-status-code.herokuapp.com/"}
 
 	sites := leSitesDoArquivo()
 
@@ -102,9 +100,11 @@ func testaSite(site string) {
 
 	if resp.StatusCode == 200 {
 		fmt.Println("O Site:", site, "Foi Carregado com Sucesso!")
+		registraLog(site, true)
 
 	} else {
 		fmt.Println("O Site:", site, "Está com Problemas. Status Code:", resp.StatusCode)
+		registraLog(site, false)
 	}
 
 }
@@ -118,11 +118,9 @@ func leSitesDoArquivo() []string {
 
 	leitor := bufio.NewReader(arquivo)
 
-	
 	for {
 		linha, err := leitor.ReadString('\n')
 		linha = strings.TrimSpace(linha)
-		
 
 		sites = append(sites, linha)
 
@@ -132,7 +130,17 @@ func leSitesDoArquivo() []string {
 
 	}
 
-arquivo.Close()
+	arquivo.Close()
 	return sites
 
+}
+
+func registraLog(site string, status bool) {
+	arquivo, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println("Ocorreu um erro: ", err)
+	}
+
+	arquivo.WriteString(time.Now().Format("02/01/2006 15:04:05") + " - " + site + " - online: " + fmt.Sprint(status) + "\n")
+	arquivo.Close()
 }
